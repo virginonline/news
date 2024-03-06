@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface NewsTypeRepository extends JpaRepository<NewsType, Long> {
 
-  Optional<Boolean> existsByColorOrTitle(String color, String title);
+  Boolean existsByTitle(String title);
 
   @Query(value = """  
       SELECT * FROM type t where lower(t.title) = lower(:title)

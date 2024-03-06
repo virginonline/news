@@ -1,22 +1,22 @@
 package com.virginonline.news.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.ToString;
 
-@Entity(name = "news")
+@Data
 @Builder
+@Entity(name = "news")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class News {
 
   @Id
@@ -26,7 +26,8 @@ public class News {
   private String summary;
   private String description;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
+  @ToString.Exclude
   private NewsType type;
 
 }
