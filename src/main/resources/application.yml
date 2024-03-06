@@ -1,0 +1,11 @@
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 123
+    url: jdbc:postgresql://postgres:5432/news
+  liquibase:
+    change-log: classpath:/db/liquibase/db.changelog.yml
+    enabled: true

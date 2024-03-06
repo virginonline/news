@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 'init tables'
+      author: 'Ivan Didichenko'
+      changes:
+        - sqlFile:
+            path: db/liquibase/sql/tables.sql

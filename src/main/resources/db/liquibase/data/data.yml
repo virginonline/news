@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: 'initial values'
+      author: 'Ivan Didichenko'
+      changes:
+        - loadData:
+            tableName: type
+            columns:
+              - column:
+                  header: id
+                  name: id
+                  type: numeric
+              - column:
+                  header: title
+                  name: title
+                  type: string
+              - column:
+                  header: color
+                  name: color
+                  type: string
+            file: db/data/type.csv
+            separator: ','
+        - loadData:
+            tableName: news
+            columns:
+              - column:
+                  header: id
+                  name: id
+                  type: numeric
+              - column:
+                  header: title
+                  name: title
+                  type: string
+              - column:
+                  header: summary
+                  name: summary
+                  type: string
+              - column:
+                  header: description
+                  name: description
+                  type: string
+              - column:
+                  header: type
+                  name: type_id
+                  type: numeric
+            file: db/data/news.csv
+            quotchar: '"'
+            separator: ','
