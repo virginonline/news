@@ -26,7 +26,7 @@ public class NewsServiceImpl implements NewsService {
 
   @Override
   public Page<News> getAllByPageable(Integer pageNumber, Integer pageSize, String sort) {
-    var pageable = !sort.isEmpty() ? PageRequest.of(pageNumber, pageSize)
+    var pageable = sort != null && !sort.isEmpty() ? PageRequest.of(pageNumber, pageSize)
         : PageRequest.of(pageNumber, pageSize, Sort.Direction.ASC, sort);
     return newsRepository.findAll(pageable);
   }

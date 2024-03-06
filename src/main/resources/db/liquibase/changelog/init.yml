@@ -5,3 +5,9 @@ databaseChangeLog:
       changes:
         - sqlFile:
             path: db/liquibase/sql/tables.sql
+  - changeSet:
+      id: 'reset ids'
+      author: 'Ivan Didichenko'
+      changes:
+        - sqlFile:
+            path: db/liquibase/sql/restart_ids.sql

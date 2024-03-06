@@ -11,3 +11,5 @@ compose:
 	docker compose up --build app -d
 dist:
 	./gradlew clean
+test:
+	./gradlew test
