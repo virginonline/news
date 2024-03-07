@@ -1,5 +1,6 @@
 package com.virginonline.news.service.impl;
 
+import com.virginonline.news.exception.ResourceNotFoundException;
 import com.virginonline.news.model.News;
 import com.virginonline.news.payload.NewNewsPayload;
 import com.virginonline.news.repository.NewsTypeRepository;
@@ -37,14 +38,14 @@ public class NewsServiceImpl implements NewsService {
       return this.getAll();
     }
     var foundedType = newTypeRepository.findByTitle(type)
-        .orElseThrow(() -> new RuntimeException("Type not found"));
+        .orElseThrow(() -> new ResourceNotFoundException("Type not found"));
     return newsRepository.getAllByTypeId(foundedType.getId());
   }
 
   @Override
   public News create(NewNewsPayload payload) {
     var type = newTypeRepository.findByTitle(payload.title())
-        .orElseThrow(() -> new RuntimeException("Type not found"));
+        .orElseThrow(() -> new ResourceNotFoundException("Type not found"));
     return newsRepository.save(
         News.builder()
             .title(payload.title())
@@ -57,17 +58,15 @@ public class NewsServiceImpl implements NewsService {
 
   @Override
   public void delete(Long newsId) {
-    var news = newsRepository.findById(newsId)
-        .orElseThrow(() -> new RuntimeException("Id not found"));
+    var news = this.getById(newsId);
     newsRepository.delete(news);
   }
 
   @Override
   public News update(Long newsId, NewNewsPayload payload) {
-    var news = newsRepository.findById(newsId)
-        .orElseThrow(() -> new RuntimeException("Id not found"));
+    var news = this.getById(newsId);
     var type = newTypeRepository.findByTitle(payload.title())
-        .orElseThrow(() -> new RuntimeException("Type not found"));
+        .orElseThrow(() -> new ResourceNotFoundException("Type not found"));
 
     return newsRepository.save(News.builder()
         .id(news.getId())
@@ -82,6 +81,6 @@ public class NewsServiceImpl implements NewsService {
   @Override
   public News getById(Long id) {
     return newsRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException(String.format("News with %d id not found", id)));
+        .orElseThrow(() -> new ResourceNotFoundException("News not found"));
   }
 }

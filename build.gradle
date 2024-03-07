@@ -13,10 +13,6 @@ java {
 
 repositories {
     mavenCentral()
-    mavenLocal()
-    maven {
-        url('https://repo.maven.apache.org/maven2/')
-    }
 }
 
 dependencies {

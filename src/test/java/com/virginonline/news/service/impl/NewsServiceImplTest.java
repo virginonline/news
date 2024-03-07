@@ -26,7 +26,6 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
-//@ActiveProfiles("test")
 @Import(TestConfig.class)
 @ExtendWith(MockitoExtension.class)
 class NewsServiceImplTest {

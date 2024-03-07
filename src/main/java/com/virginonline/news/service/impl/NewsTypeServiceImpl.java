@@ -1,5 +1,7 @@
 package com.virginonline.news.service.impl;
 
+import com.virginonline.news.exception.ResourceAlreadyExist;
+import com.virginonline.news.exception.ResourceNotFoundException;
 import com.virginonline.news.model.NewsType;
 import com.virginonline.news.payload.NewTypePayload;
 import com.virginonline.news.repository.NewsTypeRepository;
@@ -23,7 +25,7 @@ public class NewsTypeServiceImpl implements NewsTypeService {
   public NewsType create(NewTypePayload payload) {
     var contains = newsTypeRepository.existsByTitle(payload.title());
     if (contains) {
-      throw new RuntimeException("Type already exist");
+      throw new ResourceAlreadyExist("Type already exist");
     }
     return newsTypeRepository.save(NewsType.builder()
         .title(payload.title())
@@ -34,7 +36,7 @@ public class NewsTypeServiceImpl implements NewsTypeService {
   @Override
   public NewsType update(Long id, NewTypePayload payload) {
     var type = newsTypeRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("News type with id " + id + " not found"));
+        .orElseThrow(() -> new ResourceNotFoundException("News type not found"));
 
     return newsTypeRepository.save(NewsType.builder()
         .id(type.getId())
