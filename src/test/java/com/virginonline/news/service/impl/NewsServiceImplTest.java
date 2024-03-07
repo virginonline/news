@@ -8,8 +8,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.virginonline.news.config.TestConfig;
-import com.virginonline.news.model.News;
-import com.virginonline.news.model.NewsType;
+import com.virginonline.news.domain.model.News;
+import com.virginonline.news.domain.model.NewsType;
 import com.virginonline.news.payload.NewNewsPayload;
 import com.virginonline.news.repository.NewsRepository;
 import com.virginonline.news.repository.NewsTypeRepository;

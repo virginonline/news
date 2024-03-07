@@ -1,6 +1,6 @@
 package com.virginonline.news.rest;
 
-import com.virginonline.news.model.News;
+import com.virginonline.news.domain.model.News;
 import com.virginonline.news.payload.NewNewsPayload;
 import com.virginonline.news.service.NewsService;
 import java.util.List;

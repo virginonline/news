@@ -1,7 +1,7 @@
 package com.virginonline.news.service.impl;
 
-import com.virginonline.news.exception.ResourceNotFoundException;
-import com.virginonline.news.model.News;
+import com.virginonline.news.domain.exception.ResourceNotFoundException;
+import com.virginonline.news.domain.model.News;
 import com.virginonline.news.payload.NewNewsPayload;
 import com.virginonline.news.repository.NewsTypeRepository;
 import com.virginonline.news.repository.NewsRepository;
@@ -23,13 +23,6 @@ public class NewsServiceImpl implements NewsService {
   @Override
   public List<News> getAll() {
     return newsRepository.findAll();
-  }
-
-  @Override
-  public Page<News> getAllByPageable(Integer pageNumber, Integer pageSize, String sort) {
-    var pageable = sort != null && !sort.isEmpty() ? PageRequest.of(pageNumber, pageSize)
-        : PageRequest.of(pageNumber, pageSize, Sort.Direction.ASC, sort);
-    return newsRepository.findAll(pageable);
   }
 
   @Override

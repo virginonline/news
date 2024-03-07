@@ -8,7 +8,7 @@ endif
 
 
 compose:
-	docker compose up --build app -d
+	docker compose up -d
 dist:
 	./gradlew clean
 test:

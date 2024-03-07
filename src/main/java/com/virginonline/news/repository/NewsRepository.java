@@ -1,6 +1,6 @@
 package com.virginonline.news.repository;
 
-import com.virginonline.news.model.News;
+import com.virginonline.news.domain.model.News;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 

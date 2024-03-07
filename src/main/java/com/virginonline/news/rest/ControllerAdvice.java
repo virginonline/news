@@ -1,8 +1,8 @@
 package com.virginonline.news.rest;
 
-import com.virginonline.news.exception.ExceptionBody;
-import com.virginonline.news.exception.ResourceAlreadyExist;
-import com.virginonline.news.exception.ResourceNotFoundException;
+import com.virginonline.news.domain.exception.ExceptionBody;
+import com.virginonline.news.domain.exception.ResourceAlreadyExist;
+import com.virginonline.news.domain.exception.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

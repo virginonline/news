@@ -1,4 +1,4 @@
-package com.virginonline.news.model;
+package com.virginonline.news.domain.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

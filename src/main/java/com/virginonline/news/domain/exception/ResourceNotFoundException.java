@@ -1,4 +1,4 @@
-package com.virginonline.news.exception;
+package com.virginonline.news.domain.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
 

@@ -1,6 +1,6 @@
 package com.virginonline.news.service;
 
-import com.virginonline.news.model.News;
+import com.virginonline.news.domain.model.News;
 import com.virginonline.news.payload.NewNewsPayload;
 import java.util.List;
 import org.springframework.data.domain.Page;
@@ -8,8 +8,6 @@ import org.springframework.data.domain.Page;
 public interface NewsService {
 
   List<News> getAll();
-
-  Page<News> getAllByPageable(Integer pageNumber, Integer pageSize, String sort);
 
   List<News> getAllByType(String type);
 

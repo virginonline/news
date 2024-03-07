@@ -1,6 +1,6 @@
 package com.virginonline.news.service;
 
-import com.virginonline.news.model.NewsType;
+import com.virginonline.news.domain.model.NewsType;
 import com.virginonline.news.payload.NewTypePayload;
 import java.util.List;
 

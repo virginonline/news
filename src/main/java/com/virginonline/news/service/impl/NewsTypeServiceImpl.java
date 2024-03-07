@@ -1,8 +1,8 @@
 package com.virginonline.news.service.impl;
 
-import com.virginonline.news.exception.ResourceAlreadyExist;
-import com.virginonline.news.exception.ResourceNotFoundException;
-import com.virginonline.news.model.NewsType;
+import com.virginonline.news.domain.exception.ResourceAlreadyExist;
+import com.virginonline.news.domain.exception.ResourceNotFoundException;
+import com.virginonline.news.domain.model.NewsType;
 import com.virginonline.news.payload.NewTypePayload;
 import com.virginonline.news.repository.NewsTypeRepository;
 import com.virginonline.news.service.NewsTypeService;
